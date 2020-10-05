@@ -27,6 +27,7 @@ hs_err_pid*
 # user added
 *.xml
 *.iml
+*.patch
 
 # Default ignored files
 /shelf/
