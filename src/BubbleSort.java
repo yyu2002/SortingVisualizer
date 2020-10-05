@@ -11,18 +11,23 @@ public class BubbleSort extends PApplet {
      * program starts
      */
     public void setup() {
-        int numValues = 100;
-        size(800, 500);
-        frameRate(1000);
+        int width = 800;
+        int height = 500;
+        size(width, height); // set window size
 
+        int frameRate = 1000; // run at max frame rate possible
+        frameRate(frameRate);
+
+        int numValues = 50;
         values = new int[numValues];
-        rectWidth = width / values.length;
-        i = 0;
-        j = 0;
-
         for (int i = 0; i < values.length; i++) {
-            values[i] = (int) random(height);
-        }
+            values[i] = (int) random(this.height);
+        } // create NUM_VALUES random values
+
+        rectWidth = this.width / values.length; // sets the width of each rect value
+
+        i = 0; // initialize index variables
+        j = 0;
     }
 
     /**
@@ -32,13 +37,13 @@ public class BubbleSort extends PApplet {
     public void draw() {
         background(0);
 
-        // swap values
-        if (values[j] > values[j + 1]) {
-            swap(values, j, j + 1);
-        }
-
         // increment i and j each loop of draw()
         if (i < values.length) {
+            // swap values
+            if (values[j] > values[j + 1]) {
+                swap(values, j, j + 1);
+            }
+
             j++;
             if (j >= values.length - i - 1) {
                 j = 0;
