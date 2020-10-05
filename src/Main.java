@@ -9,7 +9,7 @@ public class Main extends PApplet {
         boolean continueLoop = true;
 
         while (continueLoop) {
-            System.out.print("Choose a sort: \n0. Exit \n1. Bubble Sort \n^D - Exit\n");
+            System.out.println("Choose a sort: \n0. Exit \n1. Bubble Sort \n2. SelectionSort \n^D - Exit\n");
             int response = 0;
 
             if (!in.hasNextInt()) { // invalid input handling
@@ -21,7 +21,7 @@ public class Main extends PApplet {
             } else {
                 response = in.nextInt();
 
-                if (response < 0 || response > 1) { // continue if input is invalid number
+                if (response < 0 || response > 2) { // continue if input is invalid number
                     System.out.print("Invalid input. ");
                     continue;
                 }
@@ -30,6 +30,8 @@ public class Main extends PApplet {
                     continueLoop = false;
                 } else if (response == 1) {
                     sortName = "BubbleSort";
+                } else if (response == 2) {
+                    sortName = "SelectionSort";
                 }
             }
             if (response != 0) {
