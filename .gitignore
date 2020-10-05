@@ -27,3 +27,7 @@ hs_err_pid*
 # user added
 *.xml
 *.iml
+
+# Default ignored files
+/shelf/
+/workspace.xml
